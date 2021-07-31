@@ -1,0 +1,139 @@
+.course__container {
+    margin: 3rem 0;
+    display: grid;
+    grid-template-columns: [full-start] 1fr [center-start] repeat(10, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] 1fr [full-end];
+}
+
+.course__body {
+    grid-column: center-start / center-end;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    
+}
+
+.course__link {
+    display: flex;
+}
+
+.course__body_header{
+    display: flex;
+}
+.sidebar {
+    
+    flex: 0 0 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-right: 1px solid #E8EAED;
+}
+
+.sidebar__list{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.course__area{
+    display: flex;
+}
+
+.course__space {
+    flex: 0 0 65%;
+    border: 1px solid #E8EAED;
+    border-radius: 5px;
+    padding: 1.5rem;
+
+}
+
+.course_header {
+    border-bottom: 1px solid #E8EAED;
+}
+.new__course {
+    flex: 1;
+    border-left: 1px solid #E8EAED;
+    padding-left: 3rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    margin-left: 3rem;
+    
+    
+}
+
+.new__coursebtn {
+    background-color: #F2F5FA;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.add__btn {
+    font-size: 64px;
+    font-weight: bold;
+    color:rgb(26, 124, 249);
+}
+.course__link_container {
+    height: 80rem;
+    flex: 1;
+    padding-left: 4rem;
+    padding-right: 4rem;
+}
+
+.over__hook{
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 2.5rem;
+}
+
+.course__area {
+    padding-top: 2.5rem;
+}
+.link__btn {
+    font-size: 16px;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+}
+
+.edit__btn {
+    font-size: 16px;
+    padding: 0.9rem 2rem;
+    border: 1px solid #E8EAED;
+    border-radius: 5px;
+    margin-left: auto;
+}
+.link__btn:hover {
+    border: 1px solid rgb(26, 124, 249);
+    border-radius: 5px;
+    font-size: 1.5rem;
+    padding: 0.9rem 2rem;
+    color: rgb(26, 124, 249);
+    text-align: left;
+}
+
+.active {
+    border: 1px solid rgb(26, 124, 249);
+    border-radius: 5px;
+    font-size: 1.5rem;
+    padding: 0.9rem 2rem;
+    color: rgb(26, 124, 249);
+    text-align: left; 
+    font-weight: bold;
+}
+.header__heading1 {
+    font-size: 24px;
+    color: #21242c;
+  }
+  
+  .header__heading2 {
+    font-size: 18px;
+  }
+  
+  .header__paragraph {
+    font-size: 16px;
+  }
+
+  .header__pay {
+      margin-top: 1.5rem;
+  }

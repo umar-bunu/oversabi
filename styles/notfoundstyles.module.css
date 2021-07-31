@@ -1,0 +1,34 @@
+.not__found {
+    display: grid;
+    background-color: #F5F5F5;
+    grid-template-columns: [full-start] 1fr [center-start] repeat(6, [col-start] minmax(min-content, 16rem) [col-end]) [center-end] 1fr [full-end];
+    z-index: -1;
+}
+
+.not__found_body{
+    grid-column: center-start / center-end;
+    margin: 15rem 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    grid-gap: 1rem;
+    justify-items: center;
+    align-items: center;
+
+}
+
+.header__heading1 {
+    margin-bottom: 1rem;
+    font-size: 32px;
+    color: #21242c;
+}
+
+.header__paragraph {
+    margin-bottom: 3rem;
+    font-size: 14px;
+}
+
+.headerimage {
+    width: 100%;
+    height: 32vw;
+    object-fit: cover;
+}

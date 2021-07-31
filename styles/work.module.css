@@ -1,0 +1,38 @@
+.privacy__policy{
+    margin-top: 3rem;
+    height: 600px;
+    overflow: auto;
+width: 800px;
+text-align: left;
+}
+
+.main__div{
+    text-align: center;
+    font-size: 18px;
+    margin-top: 8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.submit__btn{
+    font-size: 18px;
+    margin: 10px;
+    width: 100%;
+    background-color: aliceblue;
+    padding: 5px;
+}
+
+.error__div{
+    margin-top: 8rem;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-size: 18px;
+  }
+.error__div>div>a{
+    text-decoration: underline;
+    color: rgb(0, 89, 255);
+}

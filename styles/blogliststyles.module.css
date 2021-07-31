@@ -1,0 +1,39 @@
+.header__heading1 {
+  font-size: 32px;
+  color: #21242c;
+}
+
+.bloglist__heading2 {
+  font-size: 14px;
+}
+
+.bloglist__paragraph {
+  font-size: 12px;
+}
+
+.bloglist__author_details {
+}
+
+.bloglist__body {
+  display: grid;
+  grid-gap: 8px;
+  padding: 10px 10px;
+  justify-items: start;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  border-radius: 5px;
+}
+
+.bloglist__body:hover {
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+
+.readnow__btn {
+  font-size: 14px;
+  color: #067df7;
+}
+
+.readnow__btn:hover {
+  border-bottom: 1px solid #067df7;
+}

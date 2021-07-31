@@ -1,0 +1,107 @@
+.contact__container {
+    background-color: #f2f5fa65;
+  display: grid;
+  grid-template-columns: [full-start] 1fr [center-start] repeat(
+      8,
+      [col-start] minmax(min-content, 14rem) [col-end]
+    ) [center-end] 1fr [full-end];
+}
+
+.contact__body {
+  margin: 15rem 0;
+  grid-column: center-start / center-end;
+  display: grid;
+  grid-template-columns: [full-start] 1fr [center-start] repeat(
+      8,
+      [col-start] minmax(min-content, 14rem) [col-end]
+    ) [center-end] 1fr [full-end];
+  grid-row: repeat(2, min-content);
+  grid-gap: 3rem;
+  align-items: start;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.contact__body_text {
+  grid-column: center-start / center-end;
+  text-align: center;
+}
+
+
+.contact__body2{
+    grid-column: center-start / center-end;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    margin: 8rem 0;
+    justify-items: center;
+    align-items: center;
+    grid-gap: 9rem;
+    
+}
+
+.contact_body_form_group {
+    display: grid;
+    grid-gap: 3rem;
+    margin-bottom: 5rem;
+    margin-top: 5rem;
+    border-radius: 5px;
+    box-shadow: rgba(149, 157, 165, 0.075) 0px 8px 24px;
+    background-color: white;
+}
+
+.inputspace {
+    display: grid;
+    grid-gap: 3.5rem;
+    margin: 5rem 5rem;
+}
+
+.inputstyle {
+    background-color: transparent;
+    border: unset;
+    border-bottom: .2px solid #767676;
+    padding-left: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.inputmessage {
+    font-family: inherit;
+    padding-top: 1rem;
+    padding-left: 1rem;
+    border-radius: 5px;
+    background-color: transparent;
+}
+
+.contact__submit{
+    display: flex;
+    gap: 4rem;
+    align-items: center;
+    background-color: rgb(26,124,249);
+    padding: 2rem 1rem;
+}
+.header__heading1 {
+  font-size: 32px;
+  color: #21242c;
+}
+
+.header__paragraph {
+  font-size: 16px;
+}
+
+.contact__paragraph {
+    font-size: 14px;
+    text-align: center;
+}
+
+.submit__paragraph {
+    font-size: 14px;
+    color: #ffffff;
+    padding-left: 2rem;
+}
+.header__btn {
+    background-color: #ffffff;
+    border-radius: 2em;
+    font-size: 1.5rem;
+    padding: .7rem 2rem;
+    color: rgb(26,124,249);
+}

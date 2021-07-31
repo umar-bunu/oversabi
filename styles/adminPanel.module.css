@@ -1,0 +1,71 @@
+.loading__div {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 22px;
+}
+
+.main__div {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    margin-top: 10rem;
+    color: black;
+    font-size: 18px;
+    text-align: center;
+}
+
+.workers__list {
+    margin-right: 10px;
+    height: 40vh;
+    overflow: auto;
+    background-color: aliceblue;
+    padding: 10px;
+    border-radius: 5px;
+    width: max-content;
+}
+.body__div{
+    height: calc(100vh - 10rem);
+    overflow: auto;
+    width: max-content;
+}
+.section__header{
+    font-size: 22px;
+    width: 100%;
+    background-color: aliceblue;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.grid__container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    
+    padding: 10px;
+}
+
+.grid__item {
+    margin: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    text-align: left;
+}
+
+.grid__item__title {
+    width: 100%;
+    background-color: rgb(59, 123, 243);
+    color: white;
+    padding: 10px 20px;
+}
+
+.a__tag {
+    text-decoration: underline;
+}
+
+.confirm__btn{
+    margin-left: auto;
+    
+}

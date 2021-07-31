@@ -1,0 +1,56 @@
+.dash__container {
+    margin-top: 8rem;
+    background-color: #F2F5FA;
+    display: grid;
+    grid-template-columns: [full-start] 1fr [center-start] repeat(10, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] 1fr [full-end];
+}
+
+.dash__parent {
+    padding-left: 3rem;
+    padding-right: 3rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    grid-column: center-start / center-end;
+    display: grid;
+    grid-template-columns: [full-start] 1fr [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] 1fr [full-end];
+    grid-gap: .5rem;
+}
+
+.dash__body {
+    grid-column: full-start / full-end;
+    display: flex;
+}
+
+.edit__profile {
+    grid-column: full-start / full-end;
+
+}
+.header__heading1 {
+    font-size: 24px;
+}
+
+.header__heading2 {
+    font-size: 18px;
+}
+
+.header__paragraph {
+    font-size: 14px;
+}
+
+.dash__profile {
+    border-radius: 50%;
+}
+
+.edit__btn {
+    border: 1px solid rgb(26, 124, 249);
+    border-radius: 2em;
+    font-size: 1.5rem;
+    padding: 0.9rem 3.5rem;
+    color: rgb(26, 124, 249);
+    margin-left: auto;
+}
+  .underline__btn {
+      font-size: 1.5rem;
+      font-family: inherit;
+      text-decoration: underline;
+  }

@@ -1,0 +1,66 @@
+.main__div {
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    font-size: 18px;
+}
+
+.chat__box {
+
+    background-color: blue;
+}
+
+.secondary__div {
+    height: 100vh;
+    width: 300px;
+    border-right: solid 1px;
+    margin-right: 10px;
+}
+
+.btn {
+    
+    font-size: 18px;
+    width: 100%;
+   
+    padding: 10px 0px;
+}
+.sender__div{
+    text-align: right;
+    width: inherit;
+    margin-left: auto;
+    color: white;
+    background-color: rgb(96, 161, 247);
+    padding-right:10px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+.receiver__div{
+    margin-right: auto;
+    text-align: left;
+   
+    margin-left: auto;
+    color: black;
+    background-color: rgb(211, 208, 208);
+    padding-left:10px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+.input__text{
+    
+    width: 100%;
+    font-size: 16px;
+   
+}
+.send__icon{
+  margin-left: 10px !important;
+    margin-top: auto !important;
+  
+}
+.message__box{
+    height: 500px;
+    width: 100%;
+    overflow: auto;
+}

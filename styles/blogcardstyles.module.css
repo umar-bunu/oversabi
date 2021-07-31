@@ -1,0 +1,45 @@
+.blogcard__body {
+  display: grid;
+
+  justify-items: start;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  border-radius: 5px;
+}
+
+.blogcard__body:hover {
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.blogcard__body_text {
+  display: grid;
+  grid-gap: 1rem;
+  padding: 15px 15px;
+}
+
+.continue__reading_btn {
+  font-size: 14px;
+  color: #067df7;
+}
+
+.continue__reading_btn:hover {
+  border-bottom: 1px solid #067df7;
+}
+
+.header__heading1 {
+  font-size: 32px;
+  color: #21242c;
+}
+
+.header__heading2 {
+  font-size: 20px;
+}
+
+.header__paragraph {
+  font-size: 14px;
+}
+
+.pstyle {
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
+  padding-top: 2rem;
+}
