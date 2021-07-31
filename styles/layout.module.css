@@ -1,0 +1,8 @@
+.navbar{
+    z-index: 5 !important;
+
+    
+}
+.component{
+    z-index: 0;
+}

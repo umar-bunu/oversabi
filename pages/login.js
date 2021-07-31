@@ -2,6 +2,8 @@ import { useRouter } from "next/router";
 
 import styles from "../styles/login.module.css";
 
+import { useState, useRef } from "react";
+
 import firebase from "../lib/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
@@ -14,10 +16,26 @@ const uiConfig = {
 };
 
 function login() {
+  const [loginError, setloginError] = useState('')
+  const userEmail = useRef('')
+  const userPassword = useRef('')
   const router = useRouter();
   const [user, loading, error] = useAuthState(firebase.auth());
   console.log(loading);
   console.log(user);
+  const handleUserLogin =async(event)=>{
+    event.preventDefault()
+    try{
+      var isSignedIn = await firebase.auth().signInWithEmailAndPassword(userEmail.current.value, userPassword.current.value)
+     
+      router.push('/')
+    }
+    catch(e){
+      
+      setloginError(e.message)
+      console.log(e)
+    }
+      }
   return (
     <div
       style={{
@@ -27,6 +45,7 @@ function login() {
         padding: "40px",
         marginBottom: "5rem",
         height: "60vh",
+        
       }}
     >
       <div className={styles.main_body}>
@@ -52,12 +71,20 @@ function login() {
           </div>
         )}
 
-        <div style={{ width: "100%"}}>
-          <StyledFirebaseAuth
+       <div className={styles.signInDiv}>
+       <div >
+         <form action="" method="get" onSubmit={handleUserLogin}>
+           <input ref={userEmail} required type="email" />
+           <input ref={userPassword} required type="password" />
+           <button type="submit">Login</button>
+           {loginError && <div>{loginError}</div>}
+         </form>
+          {/* <StyledFirebaseAuth 
             uiConfig={uiConfig}
             firebaseAuth={firebase.auth()}
-          />
+          /> */}
         </div>
+       </div>
       </div>
     </div>
   );

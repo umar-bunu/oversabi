@@ -118,3 +118,7 @@ button {
 StyledFirebaseAuth{
   min-width: 800px !important;
 }
+
+img{
+  z-index: -2;
+}

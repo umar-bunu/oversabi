@@ -2,12 +2,14 @@
     margin-top: 144px;
     display: flex;
     flex-direction: row;
-    
+  
     font-size: 18px;
     justify-content: center;
 }
-.normal{
-    color:rgb(20, 119, 248);
+
+.normal {
+ 
+    color: rgb(20, 119, 248);
     text-align: left;
     font-size: 22px;
     margin: 30px;
@@ -18,4 +20,9 @@
     font-size: 28px;
     font-weight: bold;
     margin-bottom: 1rem;
+}
+
+.signInDiv {
+    width: 100%;
+
 }
