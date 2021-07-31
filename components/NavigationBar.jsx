@@ -26,6 +26,7 @@ const NavigationBar = () => {
 
     const router = useRouter();
     const getdata = async () => {
+        console.log(user)
         if (user) {
             try {
                 const workers = await firebase.firestore().collection("workers").get();
@@ -63,57 +64,44 @@ const NavigationBar = () => {
                     <Nav className={
                         "mr-auto w-100 " + styles.mininavbar__container
                     }>
-                        <Nav.Link href="/" className={
-                            styles.NavigationBar__navlink
+                        <Nav.Link href="/"
+                            className={
+                                styles.NavigationBar__navlink
                         }>Home</Nav.Link>
-                        <Nav.Link className={
+                        {user &&<Nav.Link className={
                                 styles.NavigationBar__navlink
                             }
                             href={
                                 isWorker == "admin" ? "/adminPanel" : "/workerDashBoard"
-                            }>
-                                Dashboard
-                           
-                        </Nav.Link>
+                        }>
+                            Dashboard
+
+                        </Nav.Link>}
                         <Nav.Link className={
                                 'floatRigth ' + styles.NavigationBar__navlink
                             }
                             href="/blog">
                             Blog
                         </Nav.Link>
-                        <Nav.Link>
-                        {
-                            !loading && user != undefined ? (
-                                <button className={
-                                        styles.logout__btn
-                                    }
-                                    onClick={
-                                        () => {
-                                            router.push("/login");
-                                            firebase.auth().signOut();
-                                        }
-                                }>
-                                    Log out
-                                </button>
-                            ) : (
-                                <button className={
-                                    styles.logout__btn
-                                }
-                                onClick={
-                                    () => {
-                                        router.push("/login");
-                                    }
-                            }>
-                                Log in
-                            </button>)}
-                             
+                        <Nav.Link className={ styles.NavigationBar__navlink
+                            }
+                            href="/contact">
+                            Contact us
                         </Nav.Link>
+                        <Nav.Link className={
+                                styles.logout__btn
+                            }
+                            href="/login">
+                            {
+                            !loading && (user != undefined || user != null) ? <div>Log out</div> : <div>
+                                Log in</div>
+                        } </Nav.Link>
                     </Nav>
 
                 </Navbar.Collapse>
             </Navbar>
         </div>
     )
-   
+
 };
 export default NavigationBar;

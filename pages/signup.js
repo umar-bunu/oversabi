@@ -1,84 +1,114 @@
-import Link from 'next/link'
-import router, {useRouter} from 'next/router';
-import {useState} from 'react';
+import {useRouter} from "next/router";
 
-import styles from '../styles/signup.module.css'
+import styles from "../styles/signup.module.css";
 
-import firebase from '../lib/firebase'
-import {useAuthState} from 'react-firebase-hooks/auth'
-import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth'
+import {useState, useRef} from "react";
 
-<<<<<<< HEAD
-import 'firebaseui/dist/firebaseui.css'
-=======
-    const {createUserWithEmailAndPassword} = useAuth();
-    const router = useRouter()
-    const [error, seterror] = useState('')
-    const [loading, setloading] = useState(false)
-    const createUser = async (event) => {
-        try {
-
-            event.preventDefault();
-            seterror('')
-            if (loading) 
-                return;
-            
->>>>>>> origin/newer_branch
-
-const uiConfig = {
-    signInSuccessUrl: "/",
-    signInOptions: [firebase.auth.EmailAuthProvider.PROVIDER_ID]
-}
-
-<<<<<<< HEAD
+import firebase from "../lib/firebase";
+import {useAuthState} from "react-firebase-hooks/auth";
+import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 function signup() {
+    const [loginError, setloginError] = useState('')
+    const [isLoading, setisLoading] = useState(false)
+    const userEmail = useRef('')
+    const userPassword = useRef('')
+    const router = useRouter();
+    const [user, loading, error] = useAuthState(firebase.auth());
+    const userConfirmPassword = useRef()
 
-    const router = useRouter()
-    
-    
-=======
-            if (event.target.password.value !== event.target.confirmPassword.value) {
-                seterror('Passwords do not match')
-                setloading(false)
+    const handleUserLogin = async (event) => {
+        event.preventDefault()
+        try {
+            setisLoading(true)
+            setloginError('')
+            if (userPassword.current.value != userConfirmPassword.current.value) {
+                setloginError('Passwords do not match')
                 return;
             }
-            setloading(true)
-            seterror(event.target.email.value)
-             createUserWithEmailAndPassword(event.target.email.value, event.target.password.value)
-            console.log('yo')
-            setloading(false)
-            router.push('/login')
-            setTimeout(() => {
-                
-            }, timeout);
+            await firebase.auth().createUserWithEmailAndPassword(userEmail.current.value, userPassword.current.value)
+            setisLoading(false)
+            router.push('/')
         } catch (e) {
-            setloading(false)
-            seterror(e.message)
+            alert(e.message)
+            setisLoading(false)
+            setloginError(e.message)
             console.log(e)
-          
         }
     }
->>>>>>> origin/newer_branch
-
-
     return (
-        <div style={
-            {
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                marginTop:'144px'
-            }
+        <div className={
+            styles.container
         }>
-            
-          <div style={{minWidth:"500px", padding:'30px'}}>
-          <StyledFirebaseAuth  uiConfig={uiConfig}
-                firebaseAuth={
-                    firebase.auth()
-                }/>
-          </div>
+            <div className={
+                styles.container__body
+            }>
+                <div className={
+                    styles.normal
+                }>
+
+                    <h1 className={
+                        styles.loginh1
+                    }>Welcome to Oversabi</h1>
+
+
+                </div>
+
+                {
+                error && (
+                    <div style={
+                        {
+                            textAlign: "center",
+                            color: "red"
+                        }
+                    }>
+                        {error}
+                        {" "} </div>
+                )
+            }
+
+                <div className={
+                    styles.signInDiv
+                }>
+                    <div>
+                        <form action=""
+                            onSubmit={handleUserLogin}>
+                            <div className={
+                                styles.signInDiv
+                            }>
+                                <input placeholder='Enter your email'
+                                    ref={userEmail}
+                                    required
+                                    type="email"/>
+                                <input placeholder='Enter your password'
+                                    ref={userPassword}
+                                    required
+                                    type="password"/>
+                                <input placeholder='Confirm password'
+                                    ref={userConfirmPassword}
+                                    required
+                                    type="password"/> {
+                                loginError && <p className={
+                                    styles.errorDiv
+                                }>
+                                    {loginError}</p>
+                            }
+
+                                <button disabled={isLoading}
+                                    type="submit">Login</button>
+                            </div>
+                        </form>
+
+                        {/* <StyledFirebaseAuth 
+              uiConfig={uiConfig}
+              firebaseAuth={firebase.auth()}
+            /> */} </div>
+                </div>
+
+            </div>
+
         </div>
-    )
+    );
+
 }
 
 export default signup

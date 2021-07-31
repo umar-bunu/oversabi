@@ -1,7 +1,11 @@
+.main__div{
+    width: 100%;
+}
+
 .main_body {
     margin-top: 144px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
   
     font-size: 18px;
     justify-content: center;
@@ -19,10 +23,75 @@
 .loginh1 {
     font-size: 28px;
     font-weight: bold;
-    margin-bottom: 1rem;
+
+    text-align: center;
 }
 
 .signInDiv {
     width: 100%;
+    display: grid;
+    grid-gap: 4rem;
+    text-align: center;
+ 
+}
+.errorDiv{
+  font-size: 16px;
+  font-family: inherit;
+  color: red;
+  max-width: 360px;
+  text-align: center;
+  font-weight: 300;
 
 }
+
+
+.signInDiv input{
+    width: 100%;
+    font-size: 16px;
+}
+.signInDiv button{
+    margin-top: 20px;
+    background-color: #067df7;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    
+}
+
+.newToOverSabi{
+    background-color: white;
+    color: rgb(75, 120, 243);
+    font-size: 16px;
+}
+
+
+.container__body {
+    grid-column: center-start / center-end;
+    display: grid;
+
+   /* grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+    */
+    grid-gap: 3rem;
+    justify-content: center;
+    align-content: center;
+    
+  }
+  .container {
+    margin: 15rem 0;
+    display: grid;
+  
+    grid-template-columns: [full-start] 1fr [center-start] repeat(
+        8,
+        [col-start] minmax(min-content, 14rem) [col-end]
+      ) [center-end] 1fr [full-end];
+    z-index: -2;
+    padding: 0 2rem;
+  }
+  .switchDiv{
+      width: 80%;
+      text-align: right;
+      margin: 30px;
+      
+  }

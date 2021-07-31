@@ -38,26 +38,14 @@ function login() {
       }
   return (
     <div
-      style={{
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        padding: "40px",
-        marginBottom: "5rem",
-        height: "60vh",
-        
-      }}
+     className={styles.container}
     >
-      <div className={styles.main_body}>
+      <div className={styles.container__body}>
         <div className={styles.normal}>
-            <div>
+           
                 <h1 className={styles.loginh1}>Welcome back to Oversabi</h1>
-            </div>
-          
-          <div style={{ color: "black", fontSize: "16px"}}>
-            If you are a new user, fill in the form and you will be
-            redirected accordingly
-          </div>
+           
+
         </div>
 
         {error && (
@@ -73,19 +61,27 @@ function login() {
 
        <div className={styles.signInDiv}>
        <div >
-         <form action="" method="get" onSubmit={handleUserLogin}>
-           <input ref={userEmail} required type="email" />
-           <input ref={userPassword} required type="password" />
+         <form action="" onSubmit={handleUserLogin}>
+          <div className={styles.signInDiv}>
+          <input placeholder='Enter your email' ref={userEmail} required type="email" />
+           <input placeholder='Enter your password' ref={userPassword} required type="password" />
+           {loginError && <p className={styles.errorDiv}>{loginError}</p>}
+       
            <button type="submit">Login</button>
-           {loginError && <div>{loginError}</div>}
+           </div>
          </form>
+
           {/* <StyledFirebaseAuth 
             uiConfig={uiConfig}
             firebaseAuth={firebase.auth()}
           /> */}
         </div>
        </div>
+      <div className={styles.switchDiv}>
+      <button className={styles.newToOverSabi}>new to oversabi? register</button>
+      </div>  
       </div>
+      
     </div>
   );
   origin / newer_branch;
