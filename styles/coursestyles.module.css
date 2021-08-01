@@ -93,3 +93,7 @@
   text-align: center;
   width: 100%;
 }
+
+.input__field{
+  width: 200px;
+}

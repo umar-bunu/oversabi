@@ -5,7 +5,6 @@ import firebase from '../lib/firebase'
 import styles from "../styles/coursestyles.module.css";
 import {useAuthState} from 'react-firebase-hooks/auth'
 export default function Course() {
-    const [user, loading, error] = useAuthState(firebase.auth())
     const [dataError, setdataError] = useState('')
     const [progress, setprogress] = useState('')
     const handleSubmit = async (event) => {
@@ -81,8 +80,8 @@ export default function Course() {
                         }>
                             <h2 className={
                                 styles.header__heading2
-                            }>Email</h2>
-                            <input required type="email" name="email" id="country"/>
+                            }>Your Email</h2>
+                            <input className={styles.input__field} required type="email" name="email" id="country"/>
                         </div>
                         <div className={
                             styles.assignment__form

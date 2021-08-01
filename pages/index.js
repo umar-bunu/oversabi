@@ -22,7 +22,7 @@ export default function Home() {
                 themselves as more than 82% of our clients have bagged for
                 themselves Merits and Distinctions.
               </p>
-              <Link href= {!loading &&user!=null? "/course":'/login'}>
+              <Link href= "/course">
                 <a className={styles.header__btn}>Find Dissertation & Coursework</a>
               </Link>
             </div>

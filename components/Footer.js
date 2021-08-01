@@ -36,12 +36,12 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link href="/">
+                <Link href="/login">
                   <a>Login</a>
                 </Link>
               </li>
               <li>
-                <Link href="/">
+                <Link href="/signup">
                   <a>Sign up</a>
                 </Link>
               </li>

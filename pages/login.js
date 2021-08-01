@@ -2,6 +2,8 @@ import { useRouter } from "next/router";
 
 import styles from "../styles/login.module.css";
 
+import Link from 'next/link'
+
 import { useState, useRef } from "react";
 
 import firebase from "../lib/firebase";
@@ -21,8 +23,9 @@ function login() {
   const userPassword = useRef('')
   const router = useRouter();
   const [user, loading, error] = useAuthState(firebase.auth());
-  console.log(loading);
-  console.log(user);
+  
+  if(user) firebase.auth().signOut()
+  
   const handleUserLogin =async(event)=>{
     event.preventDefault()
     try{
@@ -78,7 +81,7 @@ function login() {
         </div>
        </div>
       <div className={styles.switchDiv}>
-      <button className={styles.newToOverSabi}>new to oversabi? register</button>
+      <Link href='/signup' className={styles.newToOverSabi}>new to oversabi? register</Link>
       </div>  
       </div>
       

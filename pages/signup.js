@@ -12,9 +12,13 @@ function signup() {
     const [isLoading, setisLoading] = useState(false)
     const userEmail = useRef('')
     const userPassword = useRef('')
-    const router = useRouter();
-    const [user, loading, error] = useAuthState(firebase.auth());
     const userConfirmPassword = useRef()
+
+    const router = useRouter();
+    
+    const [user, loading, error] = useAuthState(firebase.auth());
+    
+    if(user) firebase.auth().signOut()
 
     const handleUserLogin = async (event) => {
         event.preventDefault()
@@ -29,7 +33,7 @@ function signup() {
             setisLoading(false)
             router.push('/')
         } catch (e) {
-            alert(e.message)
+            
             setisLoading(false)
             setloginError(e.message)
             console.log(e)
