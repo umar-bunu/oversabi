@@ -39,7 +39,7 @@ const [isWorker, setisWorker] = useState('')
       const works = firebase
         .firestore()
         .collection("works")
-        .where("Worker", "==", user.email)
+        .where("email", "==", user.email)
         .onSnapshot(snapshot=>{setgivenWorks(snapshot.docs.map(doc=>doc.data()))});
      
       

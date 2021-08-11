@@ -10,24 +10,20 @@ import styles from "../styles/navbarstyles.module.css";
 import oversabi from "../public/OVERSABI_LOGO_BLACK.png";
 import firebase from "../lib/firebase";
 
-const uiConfig = {
-    signInSuccessUrl: "/",
-    signInOptions: [firebase.auth.EmailAuthProvider.PROVIDER_ID]
-};
 
 const NavigationBar = () => {
     const [isWorker, setisWorker] = useState("none");
-    const [user, loading, error] = useAuthState(firebase.auth());
-
+    const { initialising, user } = useAuthState(firebase.auth());
     useEffect(() => {
-        getdata();
+     console.log(firebase.auth().currentUser)
+       getdata();
         return() => {};
-    }, [user]);
+    }, [initialising,firebase.auth().currentUser, user]);
 
     const router = useRouter();
     const getdata = async () => {
-        console.log(user)
-        if (user) {
+        console.log(firebase.auth().currentUser)
+        if (firebase.auth().currentUser) {
             try {
                 const workers = await firebase.firestore().collection("workers").get();
                 setisWorker(workers.docs.filter((item) => item.data().email == user.email).length >= 1 ? "worker" : "none");
@@ -68,7 +64,12 @@ const NavigationBar = () => {
                             className={
                                 styles.NavigationBar__navlink
                         }>Home</Nav.Link>
-                        {user &&<Nav.Link className={
+                        
+                        
+                        
+                      
+                       
+                        {firebase.auth().currentUser &&<Nav.Link className={
                                 styles.NavigationBar__navlink
                             }
                             href={
@@ -77,6 +78,7 @@ const NavigationBar = () => {
                             Dashboard
 
                         </Nav.Link>}
+                       
                         <Nav.Link className={
                                 'floatRigth ' + styles.NavigationBar__navlink
                             }
@@ -93,7 +95,7 @@ const NavigationBar = () => {
                             }
                             href="/login">
                             {
-                            !loading && (user != undefined || user != null) ? <div>Log out</div> : <div>
+                            !initialising && (user != undefined || user != null) ? <div>Log out</div> : <div>
                                 Log in</div>
                         } </Nav.Link>
                     </Nav>

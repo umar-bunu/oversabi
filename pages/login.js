@@ -22,16 +22,16 @@ function login() {
   const userEmail = useRef('')
   const userPassword = useRef('')
   const router = useRouter();
-  const [user, loading, error] = useAuthState(firebase.auth());
+  const [user, initialising, error] = useAuthState(firebase.auth());
   
-  if(user) firebase.auth().signOut()
-  
+ 
   const handleUserLogin =async(event)=>{
     event.preventDefault()
+    setloginError('')
     try{
-      var isSignedIn = await firebase.auth().signInWithEmailAndPassword(userEmail.current.value, userPassword.current.value)
+      await firebase.auth().signInWithEmailAndPassword(userEmail.current.value, userPassword.current.value)
      
-      router.push('/')
+     console.log(firebase.auth().currentUser)
     }
     catch(e){
       
