@@ -14,8 +14,8 @@ export default function Home() {
           <div className={styles.header__body}>
             <div className={styles.header__body_content}>
               <h1 className={styles.header__heading1}>
-                Proudly The UKs No. 1 Dissertation & Coursework Writing Company,
-                Since 2001!{" "}
+                Oversabi Dissertation & Coursework Writing Company,
+                
               </h1>
               <p className={styles.header__paragraph}>
                 We are so good that the results of our works speak for
@@ -80,7 +80,7 @@ export default function Home() {
                 </h2>
                 <p className={styles.header__paragraph}>
                   Over 96% of our clients have scored Merits & Distinctions
-                  Since 2001, Its effortless now!
+                  Since we get started
                 </p>
               </div>
 
@@ -94,8 +94,7 @@ export default function Home() {
                 />
                 <h2 className={styles.header__heading2}>Punctuality</h2>
                 <p className={styles.header__paragraph}>
-                  100% Confidentiality, 0% Plagiarism on turnitin, Get Ready for
-                  Submission Work
+                  100% Confidentiality, we handle our client work with punctiuality and submit their projects in time.
                 </p>
               </div>
               <div className={styles.section1__card}>
@@ -106,7 +105,7 @@ export default function Home() {
                   className={styles.svg__icon}
                   alt="medal"
                 />
-                <h2 className={styles.header__heading2}>ultimate work</h2>
+                <h2 className={styles.header__heading2}>Ultimate work</h2>
                 <p className={styles.header__paragraph}>
                   100% Confidentiality, 0% Plagiarism on turnitin, Get Ready for
                   Submission Work
@@ -131,11 +130,10 @@ export default function Home() {
                 <a className={styles.learnmore__btn}>Career</a>
               </Link>
               <h1 className={styles.header__heading1}>
-                Proudly The UKs No. 1 Dissertation & Coursework Writing Company,
-                Since 2001!{" "}
+                Start a career with Oversabi
               </h1>
               <p className={styles.header__paragraph}>
-                Differentiate your classroom and engage every student. We
+                Differentiate your ideas and engage every student. We
                 empower Freelancers to support their entire clients. 90% of
                 students .who have used Oversabi have found us effective.
               </p>
@@ -179,253 +177,85 @@ export default function Home() {
             <div className={styles.section2__header}>
               <h1 className={styles.header__heading1}> What we do</h1>
               <p className={styles.header__paragraph}>
-                When it comes to hiring any type of Dissertation Writing Service
-                in London, particularly online services for any type of work,
+                When it comes to hiring any type of Dissertation Writing Service, particularly online services for any type of work,
                 particularly online academic writing services, trust becomes one
                 of the major issues on the part of students.
               </p>
             </div>
             <div className={styles.section2__card_body}>
               <div className={styles.section2__card}>
-                <h2 className={styles.header__heading2}>Dissertation</h2>
-                <p className={styles.section2__paragraph}>
-                  particularly online services for any type of work,
-                  particularly
-                </p>
+                <h2 className={styles.header__heading2}>Dissertation MSc</h2>
                 <Link href="/">
                   <a className={styles.learnmore__btn}>Learn more &#8594;</a>
                 </Link>
               </div>
               <div className={styles.section2__card}>
-                <h2 className={styles.header__heading2}>Coures Work</h2>
-                <p className={styles.section2__paragraph}>
-                  particularly online services for any type of work,
-                  particularly
-                </p>
+                <h2 className={styles.header__heading2}>Coureswork</h2>
                 <Link href="/">
                   <a className={styles.learnmore__btn}>Learn more &#8594;</a>
                 </Link>
               </div>
               <div className={styles.section2__card}>
-                <h2 className={styles.header__heading2}>Essay Writing</h2>
-                <p className={styles.section2__paragraph}>
-                  particularly online services for any type of work,
-                  particularly
-                </p>
+                <h2 className={styles.header__heading2}>Essay</h2>
                 <Link href="/">
                   <a className={styles.learnmore__btn}>Learn more &#8594;</a>
                 </Link>
               </div>
               <div className={styles.section2__card}>
-                <h2 className={styles.header__heading2}>PhD Proposal</h2>
-                <p className={styles.section2__paragraph}>
-                  particularly online services for any type of work,
-                  particularly
-                </p>
+                <h2 className={styles.header__heading2}>Dissertation PhD</h2>
                 <Link href="/">
                   <a className={styles.learnmore__btn}>Learn more &#8594;</a>
                 </Link>
               </div>
               <div className={styles.section2__card}>
-                <h2 className={styles.header__heading2}>PhD Thesis</h2>
-                <p className={styles.section2__paragraph}>
-                  particularly online services for any type of work,
-                  particularly
-                </p>
+                <h2 className={styles.header__heading2}>Journal Research</h2>
                 <Link href="/">
                   <a className={styles.learnmore__btn}>Learn more &#8594;</a>
                 </Link>
               </div>
               <div className={styles.section2__card}>
                 <h2 className={styles.header__heading2}>Assignment</h2>
-                <p className={styles.section2__paragraph}>
-                  particularly online services for any type of work,
-                  particularly
-                </p>
                 <Link href="/">
                   <a className={styles.learnmore__btn}>Learn more &#8594;</a>
                 </Link>
               </div>
-              <div className={styles.section2__card}>
-                <h2 className={styles.header__heading2}>Thesis Writing</h2>
-                <p className={styles.section2__paragraph}>
-                  particularly online services for any type of work,
-                  particularly
-                </p>
-                <Link href="/">
-                  <a className={styles.learnmore__btn}>Learn more &#8594;</a>
-                </Link>
-              </div>
+              
             </div>
           </div>
         </div>
-        <div className={styles.section3}>
-          <div className={styles.section3__content}>
-            <div className={styles.section3__text}>
-              <h1 className={styles.header__heading1}>
-                Oversabi is Proudly Supported by
-              </h1>
-              <p className={styles.header__paragraph}>
-                We are glad that we have large numbers of companies that
-                supports us and also welcomes us to the educational world
-              </p>
-            </div>
-
-            <div className={styles.section3__support}>
-              <Image
-                src="/alisa.png"
-                width={100}
-                height={100}
-                className={styles.section3__image}
-                alt="brand logo"
-              />
-              <Image
-                src="/organic.png"
-                width={128}
-                height={80}
-                className={styles.section3__image}
-                alt="brand logo"
-              />
-              <Image
-                src="/mockup.png"
-                width={127}
-                height={57}
-                className={styles.section3__image}
-                alt="brand logo"
-              />
-              <Image
-                src="/jamie.png"
-                width={88}
-                height={84}
-                className={styles.section3__image}
-                alt="brand logo"
-              />
-              <Image
-                src="/newwave.png"
-                width={130}
-                height={67}
-                className={styles.section3__image}
-                alt="brand logo"
-              />
-              <Image
-                src="/mockup.png"
-                width={128}
-                height={80}
-                className={styles.section3__image}
-                alt="brand logo"
-              />
-              <Image
-                src="/oversabi.png"
-                width={88}
-                height={84}
-                className={styles.section3__image}
-                alt="brand logo"
-              />
-              <Image
-                src="/organic.png"
-                width={130}
-                height={67}
-                className={styles.section3__image}
-                alt="brand logo"
-              />
-            </div>
-          </div>
-        </div>
+       
         <div className={styles.section4}>
           <div className={styles.section4__quotes}>
-            <div className={styles.quote}>
-              <div className={styles.quote__text}>
-                <h2 className={styles.header__heading2}>
-                  <span className={styles.text__comma}>&#786;</span> This is
-                  best and biggest unified platform
-                </h2>
-                <p className={styles.header__paragraph}>
-                  The client booking software makes it super easy for my clients
-                  to use and book with me. I especially love their customer
-                  service, they always respond in a timely manner at all hours!
-                  Before the trial was even complete, I had clients scheduled
-                  for my service, pay me through Paypal (linked easily) and
-                  connect via Zoom (also linked easily).
-                </p>
-              </div>
-              <div className={styles.sub__text}>
-                <p>-Emmanuel Oladimeji-</p>
-                <p>University Student</p>
-              </div>
+            <div>
+              <h1 className={styles.header__heading1}>About Us</h1>
+              <h2 className={styles.header__heading2}>Who we are?</h2>
+              <p>Oversabi boasts a highly experienced team of specialists in various fields of academic and business research.</p>
             </div>
             <div className={styles.quote}>
               <div className={styles.quote__text}>
                 <h2 className={styles.header__heading2}>
-                  <span className={styles.text__comma}>&#786;</span> We can
-                  easily take admission for any course
+                  What we do?
                 </h2>
                 <p className={styles.header__paragraph}>
-                  Appointy’s appointment booking app is easy to use and also
-                  available for free! I loved the integrations with multiple
-                  platforms like Google analytics, adding a book now on
-                  Instagram and especially a schedule directly from Google My
-                  Business.
+                  From natural sciences to business/management and the humanities, our expert editors and researchers guarantee clients a stress-free research process. We provide guidance and support on assignments, dissertations, projects, and much more!
                 </p>
               </div>
-              <div className={styles.sub__text}>
-                <p>-Umar Bunu-</p>
-                <p>University Student</p>
+             
+            </div>
+            <div className={styles.quote}>
+              <div className={styles.quote__text}>
+                <h2 className={styles.header__heading2}>
+                  Why us?
+                </h2>
+                <p className={styles.header__paragraph}>
+                  We are a team dedicated to building dependable long-term relationships that cater to the unique needs of our clients whilst guaranteeing 100% anonymity.
+                </p>
               </div>
             </div>
           </div>
         </div>
-        <div className={styles.section5}>
-          <div className={styles.header__body}>
-            <div className={styles.header__body_image}>
-              <Image
-                src="/join.png"
-                width={500}
-                height={500}
-                className={styles.headerimage}
-                alt="join image"
-              />
-            </div>
-            <div className={styles.header__body_content}>
-              <Link href="#">
-                <a className={styles.learnmore__btn}>Sign Up</a>
-              </Link>
-              <h1 className={styles.header__heading1}>Join Oversabi Today.</h1>
-              <p className={styles.header__paragraph}>
-                Differentiate your classroom and engage every student. We
-                empower Freelancers to support their entire clients. 90% of
-                students .who have used Oversabi have found us effective.
-              </p>
-              <Link href="#">
-                <a className={styles.header__btn}>Submit Assignment</a>
-              </Link>
-              <Link href="#">
-                <a className={styles.header__btn}>Find work</a>
-              </Link>
-            </div>
-          </div>
-        </div>
-        <div className={styles.section6}>
-          <div className={styles.section6__body}>
-            <div className={styles.section6__body_text}>
-              <h1 className={styles.header__heading1}>Subscribe to our Blog</h1>
-              <p className={styles.header__paragraph}>
-                With our Experienced and Dependable Managers and Professional
-                Research Experts it becomes so much easier... we OWN the
-                responsibility of your work. Just Mail & Consider it Done!
-              </p>
-            </div>
-            <div className={styles.section6__body_form}>
-              <input
-                placeholder="youremail@example.com"
-                type="email"
-                className={styles.inputform}
-              />
-              <Link href="#">
-                <a className={styles.header__btn}>Subscribe</a>
-              </Link>
-            </div>
-          </div>
-        </div>
+      
+        
       </div>
   );
 }

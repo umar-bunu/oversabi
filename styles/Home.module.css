@@ -5,6 +5,10 @@
     z-index: -1;
 }
 
+.container a {
+    text-decoration: none;
+}
+
 .header__content{
     grid-column: full-start / full-end;
     display: grid;
@@ -15,7 +19,7 @@
 
 .header__body{
     grid-column: center-start / center-end;
-    margin: 15rem 0;
+    margin: 8rem 0;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
     grid-gap: 6rem;
@@ -122,6 +126,8 @@
 .section2__body {
     margin: 15rem 0;
     grid-column: center-start / center-end;
+    display: grid;
+    grid-gap: 5rem;
 }
 
 .section2__header {
@@ -132,8 +138,6 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));   
     grid-gap: 3rem;
-    justify-items: center;
-    align-items: center;
 }
 .section2__card {
     box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;

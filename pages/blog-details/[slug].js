@@ -106,28 +106,7 @@ export default function BlogDetails({ blog, bloglists }) {
           </div>
         </div>
       </div>
-      <div className={styles.section6}>
-        <div className={styles.section6__body}>
-          <div className={styles.section6__body_text}>
-            <h1 className={styles.header__heading1}>Subscribe to our Blog</h1>
-            <p className={styles.header__paragraph}>
-              With our Experienced and Dependable Managers and Professional
-              Research Experts it becomes so much easier... we OWN the
-              responsibility of your work. Just Mail & Consider it Done!
-            </p>
-          </div>
-          <div className={styles.section6__body_form}>
-            <input
-              placeholder="youremail@example.com"
-              type="email"
-              className={styles.inputform}
-            />
-            <Link href="/">
-              <a className={styles.header__btn}>Subscribe</a>
-            </Link>
-          </div>
-        </div>
-      </div>
+      
     </div>
   );
 }
