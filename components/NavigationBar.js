@@ -95,7 +95,7 @@ const NavigationBar = () => {
                             }
                             href="/login">
                             {
-                            !initialising && (user != undefined || user != null) ? <div>Log out</div> : <div>
+                             ( firebase.auth().currentUser != null) ? <div>Log out</div> : <div>
                                 Log in</div>
                         } </Nav.Link>
                     </Nav>
