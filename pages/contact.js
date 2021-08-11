@@ -11,7 +11,7 @@ export default function contact() {
         e.preventDefault()
 
         try {
-            emailjs.send('service_iz4k1pf', 'template_m5rmccc', {
+          await  emailjs.send('service_iz4k1pf', 'template_m5rmccc', {
                 to_name: userName.current.value,
                 to_email: userEmail.current.value,
                 from_name: 'Oversabi',

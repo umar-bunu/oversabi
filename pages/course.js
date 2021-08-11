@@ -7,14 +7,15 @@ import {useAuthState} from 'react-firebase-hooks/auth'
 export default function Course() {
     const [dataError, setdataError] = useState('')
     const [progress, setprogress] = useState('')
+    const [selectedService, setselectedService] = useState('Assignment')
     const handleSubmit = async (event) => {
         event.preventDefault()
         setdataError('');
         setprogress('')
-        console.log(Date())
+       
         try {
             var receipt = Date().toString()
-            console.log(receipt)
+          
             var upload1 = await firebase.storage().refFromURL('gs://oversabi-321f7.appspot.com/receipts/' + receipt).put(event.target.receipt.files[0])
             var costumerDoc = Date().toString()
 
@@ -35,7 +36,7 @@ export default function Course() {
                 workerDoc: ''
             })
             alert('Success.\nOnce payment is verified, your project shall be attended to')
-            console.log('done')
+           
         } catch (e) {
 
             console.log(e.message);
@@ -252,14 +253,17 @@ export default function Course() {
                             <h2 className={
                                 styles.header__heading2
                             }>Desired Service</h2>
-                            <select required id="country" name="serviceType">
+                            <select required id="country" name="serviceType" onChange={(e)=>{
+                                e.preventDefault()
+                                setselectedService(e.target.options[e.target.selectedIndex].text)
+                                }}>
 
                                 <option value="2;1,3">Assignment</option>
                                 <option value="3;1,3">Coursework</option>
                                 <option value="4;1,3">Essay</option>
-                                <option value="9;1,3">Dissertation</option>
-                                <option value="16;1,3">High Index Journal</option>
-                                <option value="1;1,3">PhD Admission Proposal</option>
+                                <option value="9;1,3">Dissertation Msc</option>
+                                <option value="16;1,3">Dissertation Phd</option>
+                                <option value="1;1,3">Journal Research</option>
                             </select>
                         </div>
                         <div className={
@@ -269,44 +273,34 @@ export default function Course() {
                                 styles.header__heading2
                             }>Words/Pages</h2>
                             <select required id="country" name="noOfWords">
-                                <option value="1000">1000 words ~ 4 pages</option>
-                                <option value="1500">1500 words ~ 6 pages</option>
-                                <option value="2000">2000 words ~ 8 pages</option>
-                                <option value="2500">2500 words ~ 10 pages</option>
-                                <option value="3000">3000 words ~ 12 pages</option>
-                                <option value="3500">3500 words ~ 14 pages</option>
-                                <option value="4000">4000 words ~ 16 pages</option>
-                                <option value="4500">4500 words ~ 18 pages</option>
-                                <option value="5000">5000 words ~ 20 pages</option>
-                                <option value="5500">5500 words ~ 22 pages</option>
-                                <option value="6000">6000 words ~ 24 pages</option>
-                                <option value="6500">6500 words ~ 26 pages</option>
-                                <option value="7000">7000 words ~ 28 pages</option>
-                                <option value="7500">7500 words ~ 30 pages</option>
-                                <option value="8000">8000 words ~ 32 pages</option>
-                                <option value="9000">9000 words ~ 36 pages</option>
-                                <option value="10000">10000 words ~ 40 pages</option>
-                                <option value="11000">11000 words ~ 44 pages</option>
-                                <option value="12000">12000 words ~ 48 pages</option>
-                                <option value="13000">13000 words ~ 52 pages</option>
-                                <option value="14000">14000 words ~ 56 pages</option>
-                                <option value="15000">15000 words ~ 60 pages</option>
-                                <option value="16000">16000 words ~ 64 pages</option>
-                                <option value="17000">17000 words ~ 68 pages</option>
-                                <option value="18000">18000 words ~ 72 pages</option>
-                                <option value="19000">19000 words ~ 76 pages</option>
-                                <option value="20000">20000 words ~ 80 pages</option>
-                                <option value="21000">21000 words ~ 84 pages</option>
-                                <option value="22000">22000 words ~ 88 pages</option>
-                                <option value="23000">23000 words ~ 92 pages</option>
-                                <option value="24000">24000 words ~ 96 pages</option>
-                                <option value="25000">25000 words ~ 100 pages</option>
-                                <option value="26000">26000 words ~ 104 pages</option>
-                                <option value="27000">27000 words ~ 108 pages</option>
-                                <option value="28000">28000 words ~ 112 pages</option>
-                                <option value="29000">29000 words ~ 116 pages</option>
-                                <option value="30000">30000 words ~ 120 pages</option>
-                            </select>
+                                {selectedService =='Assignment' || selectedService=='Coursework' || selectedService=='Essay'?
+                               <> <option value="100">1,000 words ~ 3 pages $100</option>
+                               <option value="200">2,000 words ~ 6 pages $200</option>
+                               <option value="300">3,000 words ~ 9 pages $300</option>
+                               <option value="400">4,000 words ~ 12 pages $400</option>
+                               <option value="500">5,000 words ~ 15 pages $500</option></>
+                               :selectedService =='Dissertation Msc'?
+                               <>
+                                <option value="1000">10,000 words $1,000</option>
+                                <option value="1500">15,000 words $1,500</option>
+                                <option value="1750">20,000 words $1,750</option>
+                                <option value="2000">25,000 words $2,000 </option>
+                              </>:selectedService =='Dissertation Phd'?
+                               <>
+                                    <option value="4000">15,000 words $4,000</option>
+                                    <option value="5500">20,000 words $5,500</option>
+                                    <option value="7000">25,000 words $7,000</option>
+                                    <option value="8500">30,000 words $8,500 </option>
+                              </>:
+                                <>
+                                    <option value="500">15,000 words $500</option>
+                                    <option value="750">2,000 words $750</option>
+                                    <option value="1000">3,000 words $1,000</option>
+                                    <option value="1250">4,000 words $1,250</option>
+                                    <option value="1500">5,000 words $1,500</option>
+                                </>
+                            }
+                                </select>
                         </div>
                         <div className={
                             styles.assignment__form
