@@ -18,6 +18,7 @@ const uiConfig = {
 };
 
 function login() {
+  if(firebase.auth().currentUser) firebase.auth().signOut()
   const [loginError, setloginError] = useState('')
   const userEmail = useRef('')
   const userPassword = useRef('')
