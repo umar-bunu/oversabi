@@ -17,8 +17,8 @@ const uiConfig = {
   signInOptions: [firebase.auth.EmailAuthProvider.PROVIDER_ID],
 };
 
-function login() {
-  if(firebase.auth().currentUser) firebase.auth().signOut()
+function login({props}) {
+ 
   const [loginError, setloginError] = useState('')
   const userEmail = useRef('')
   const userPassword = useRef('')
@@ -31,8 +31,7 @@ function login() {
     setloginError('')
     try{
       await firebase.auth().signInWithEmailAndPassword(userEmail.current.value, userPassword.current.value)
-     
-     console.log(firebase.auth().currentUser)
+      router.push('/')
     }
     catch(e){
       

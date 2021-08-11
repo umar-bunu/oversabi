@@ -18,7 +18,7 @@ const NavigationBar = () => {
      console.log(firebase.auth().currentUser)
        getdata();
         return() => {};
-    }, [initialising,firebase.auth().currentUser, user]);
+    }, [firebase.auth().currentUser]);
 
     const router = useRouter();
     const getdata = async () => {
@@ -26,14 +26,14 @@ const NavigationBar = () => {
         if (firebase.auth().currentUser) {
             try {
                 const workers = await firebase.firestore().collection("workers").get();
-                setisWorker(workers.docs.filter((item) => item.data().email == user.email).length >= 1 ? "worker" : "none");
-                if (workers.docs.filter((item) => item.data().email == user.email).length >= 1) {
+                setisWorker(workers.docs.filter((item) => item.data().email == firebase.auth().currentUser.email).length >= 1 ? "worker" : "none");
+                if (workers.docs.filter((item) => item.data().email == firebase.auth().currentUser.email).length >= 1) {
 
                     return;
                 }
 
                 const admins = await firebase.firestore().collection("admins").get();
-                setisWorker(admins.docs.filter((item) => item.data().email == user.email).length >= 1 ? "admin" : "none");
+                setisWorker(admins.docs.filter((item) => item.data().email == firebase.auth().currentUser.email).length >= 1 ? "admin" : "none");
             } catch (e) {
                 console.log("fetch data " + e.message);
             }
