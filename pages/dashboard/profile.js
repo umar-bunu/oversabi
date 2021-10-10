@@ -1,10 +1,8 @@
 import Link from "next/dist/client/link";
-import Dashboardheader from "../../components/Dashboardheader";
 import styles from "../../styles/profilestyles.module.css";
 
 const course = () => (
   <div>
-    <Dashboardheader />
     <div className={styles.course__container}>
       <div className={styles.course__body}>
         <div className={styles.course__link}>
@@ -12,25 +10,17 @@ const course = () => (
             <ul className={styles.sidebar__list}>
               <h2 className={styles.header__heading2}>My Project</h2>
               <Link href="/dashboard/work">
-                <a className={styles.link__btn}>
-                  Assignments
-                </a>
+                <a className={styles.link__btn}>Assignments</a>
               </Link>
               <h2 className={styles.header__heading2}>My Account</h2>
               <Link href="/dashboard/chat">
-                <a className={styles.link__btn}>
-                  Chat
-                </a>
+                <a className={styles.link__btn}>Chat</a>
               </Link>
               <Link href="/dashboard/profile">
-                <a className={styles.link__btn, styles.active}>
-                  Profile
-                </a>
+                <a className={(styles.link__btn, styles.active)}>Profile</a>
               </Link>
               <Link href="/dashboard/account">
-                <a className={styles.link__btn}>
-                  Payment Details
-                </a>
+                <a className={styles.link__btn}>Payment Details</a>
               </Link>
             </ul>
 
