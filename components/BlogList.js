@@ -1,21 +1,32 @@
 import Link from "next/dist/client/link";
-import styles from "../styles/blogliststyles.module.css"
+import Image from "next/dist/client/image";
+import styles from "../styles/blogliststyles.module.css";
 
 export default function BlogList({ blog }) {
-    const { title, slug} = blog.fields
+  const { title, slug, thumbnail, subTItle } = blog.fields;
 
   return (
     <div>
       <div className={styles.bloglist__body}>
-        <h2 className={styles.bloglist__heading2}>{title}</h2>
-        {/* <div className={styles.bloglist__author_details}>
-          <p className={styles.bloglist__paragraph}>{authors}</p>
-          <p className={styles.bloglist__paragraph}>{date}</p>
-        </div> */}
+        <Image
+          className={styles.naimage}
+          src={"https:" + thumbnail.fields.file.url}
+          width={640}
+          height={426}
+          alt="laptop picture"
+        />
+        <div className={styles.blogcard__body_text}>
+          <h2 className={styles.header__heading2}>{title}</h2>
+          <div className={styles.pstyle}>
+            <p className={styles.header__paragraph}>{subTItle}</p>
+          </div>
 
-        <Link href={"/blog-details/" + slug}>
-          <a className={styles.readnow__btn}>Read now &#8594;</a>
-        </Link>
+          <Link href={"/blog-details/" + slug}>
+            <a className={styles.continue__reading_btn}>
+              Continue reading &#8594;
+            </a>
+          </Link>
+        </div>
       </div>
     </div>
   );

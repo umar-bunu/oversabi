@@ -75,38 +75,39 @@ export default function BlogDetails({ blog, bloglists }) {
   return (
     <div className={styles.slug__container}>
       <div className={styles.slug__parent}>
-        <div className={styles.slug__container_otherblogs}>
-          <div className={styles.slug__container_otherblogs_card}>
-            {bloglists.map((blog) => (
-              <BlogList key={blog.sys.id} blog={blog} />
-            ))}
-          </div>
-        </div>
         <div className={styles.slug__container_data}>
           <div className={styles.slug__container_data_info}>
+            <h2 className={styles.slug__header2}>{title}</h2>
+            <div className={styles.author__date}>
+              {authors.map((aut) => (
+                <span key={aut} className={styles.header__paragraph}>
+                  {aut},
+                </span>
+              ))}
+              <p className={styles.slug__paragraphd}>{date}</p>
+            </div>
+
             <Image
               src={"https:" + featuredImage.fields.file.url}
               width={featuredImage.fields.file.details.image.width}
               height={featuredImage.fields.file.details.image.height}
               alt="featured image"
+              className={styles.slugimage}
             />
             <h2 className={styles.slug__header_2}>{title}</h2>
             <div className={styles.method__styles}>
               {documentToReactComponents(method)}
             </div>
-            <div className={styles.author__date}>
-              <h2 className={styles.header__paragraph}>Author:</h2>
-              {authors.map((aut) => (
-                <span key={aut} className={styles.header__paragraph}>
-                  {aut}
-                </span>
-              ))}
-            </div>
-            <p className={styles.slug__paragraph}>{date}</p>
+          </div>
+        </div>
+        <div className={styles.slug__container_otherblogs}>
+          <div className={styles.slug__container_otherblogs_card}>
+            {bloglists.slice(3, 6).map((blog) => (
+              <BlogList key={blog.sys.id} blog={blog} />
+            ))}
           </div>
         </div>
       </div>
-      
     </div>
   );
 }
