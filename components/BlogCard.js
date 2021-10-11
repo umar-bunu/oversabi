@@ -11,8 +11,8 @@ export default function BlogCard({ blog }) {
         <Image
           className={styles.naimage}
           src={"https:" + thumbnail.fields.file.url}
-          width={640}
-          height={426}
+          width={thumbnail.fields.file.details.image.width}
+          height={thumbnail.fields.file.details.image.height}
           alt="laptop picture"
         />
       </div>

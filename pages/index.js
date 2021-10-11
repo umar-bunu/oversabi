@@ -89,37 +89,37 @@ export default function Home() {
           <div className={styles.section2__card_body}>
             <div className={styles.section2__card}>
               <h2 className={styles.header__heading2}>Dissertation MSc</h2>
-              <Link href="/">
+              <Link href="/course">
                 <a className={styles.learnmore__btn}>Learn more &#8594;</a>
               </Link>
             </div>
             <div className={styles.section2__card}>
               <h2 className={styles.header__heading2}>Coureswork</h2>
-              <Link href="/">
+              <Link href="/course">
                 <a className={styles.learnmore__btn}>Learn more &#8594;</a>
               </Link>
             </div>
             <div className={styles.section2__card}>
               <h2 className={styles.header__heading2}>Essay</h2>
-              <Link href="/">
+              <Link href="/course">
                 <a className={styles.learnmore__btn}>Learn more &#8594;</a>
               </Link>
             </div>
             <div className={styles.section2__card}>
               <h2 className={styles.header__heading2}>Dissertation PhD</h2>
-              <Link href="/">
+              <Link href="/course">
                 <a className={styles.learnmore__btn}>Learn more &#8594;</a>
               </Link>
             </div>
             <div className={styles.section2__card}>
               <h2 className={styles.header__heading2}>Journal Research</h2>
-              <Link href="/">
+              <Link href="/course">
                 <a className={styles.learnmore__btn}>Learn more &#8594;</a>
               </Link>
             </div>
             <div className={styles.section2__card}>
               <h2 className={styles.header__heading2}>Assignment</h2>
-              <Link href="/">
+              <Link href="/course">
                 <a className={styles.learnmore__btn}>Learn more &#8594;</a>
               </Link>
             </div>

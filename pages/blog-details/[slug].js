@@ -102,7 +102,7 @@ export default function BlogDetails({ blog, bloglists }) {
         </div>
         <div className={styles.slug__container_otherblogs}>
           <div className={styles.slug__container_otherblogs_card}>
-            {bloglists.slice(3, 6).map((blog) => (
+            {bloglists.slice(0, 3).map((blog) => (
               <BlogList key={blog.sys.id} blog={blog} />
             ))}
           </div>
