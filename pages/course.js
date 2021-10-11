@@ -16,10 +16,6 @@ export default function Course() {
     try {
       var receipt = Date().toString();
 
-      var upload1 = await firebase
-        .storage()
-        .refFromURL("gs://oversabi-321f7.appspot.com/receipts/" + receipt)
-        .put(event.target.receipt.files[0]);
       var costumerDoc = Date().toString();
 
       var upload2 = await firebase
@@ -27,38 +23,37 @@ export default function Course() {
         .refFromURL(
           "gs://oversabi-321f7.appspot.com/customerDocs/" + costumerDoc
         )
-        .put(event.target.receipt.files[0]);
-      upload1 = await firebase
-        .storage()
-        .refFromURL("gs://oversabi-321f7.appspot.com/receipts/" + receipt)
-        .getDownloadURL();
+        .put(event.target.customerDoc.files[0]);
+
       upload2 = await firebase
         .storage()
         .refFromURL(
           "gs://oversabi-321f7.appspot.com/customerDocs/" + costumerDoc
         )
         .getDownloadURL();
-      await firebase.firestore().collection("works").add({
-        customerDoc: upload2,
-        customer: event.target.email.value,
-        domain:
-          event.target.domain.options[event.target.domain.selectedIndex].text,
-        dueDate: event.target.dueDate.value.toString(),
-        isDone: false,
-        paymentReceipt: upload1,
-        phoneNo: event.target.phoneNo.value,
-        serviceType:
-          event.target.serviceType.options[
-            event.target.serviceType.selectedIndex
-          ].text,
-        tools:
-          event.target.tools.options[event.target.tools.selectedIndex].text,
-        Worker: "",
-        workerDoc: "",
-      });
-      alert(
-        "Success.\nOnce payment is verified, your project shall be attended to"
-      );
+      await firebase
+        .firestore()
+        .collection("works")
+        .add({
+          worker: null,
+          customerDoc: upload2,
+          customer: event.target.email.value,
+          domain:
+            event.target.domain.options[event.target.domain.selectedIndex].text,
+          dueDate: firebase.firestore.Timestamp.fromDate(
+            new Date(event.target.dueDate.value)
+          ),
+          isDone: false,
+
+          phoneNo: event.target.phoneNo.value,
+          serviceType:
+            event.target.serviceType.options[
+              event.target.serviceType.selectedIndex
+            ].text,
+          tools:
+            event.target.tools.options[event.target.tools.selectedIndex].text,
+        });
+      alert("Success.\n Will contact you soon");
     } catch (e) {
       console.log(e.message);
       alert(e);
@@ -343,11 +338,7 @@ export default function Course() {
 
             <div className={styles.assignment__form}>
               <h2 className={styles.header__heading2}>Project file</h2>
-              <input name="customeDoc" required type="file" />
-            </div>
-            <div className={styles.assignment__form}>
-              <h2 className={styles.header__heading2}>payment receipt</h2>
-              <input name="receipt" required type="file" />
+              <input name="customerDoc" required type="file" />
             </div>
 
             <button type="submit" className={styles.header__btn}>

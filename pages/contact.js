@@ -2,27 +2,73 @@ import Image from "next/dist/client/image";
 import Link from "next/dist/client/link";
 import styles from "../styles/contactstyles.module.css";
 import emailjs from "emailjs-com";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import firebase from "../lib/firebase";
+
 export default function contact() {
   const userName = useRef("");
   const userEmail = useRef("");
   const message = useRef("");
+  const [resumePdf, setresumePdf] = useState(null);
+  var isLoading = false;
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (isLoading) {
+      return;
+    }
+    isLoading = true;
+    if (resumePdf == null) {
+      try {
+        await emailjs.send("service_iz4k1pf", "template_m5rmccc", {
+          to_name: userName.current.value,
+          to_email: userEmail.current.value,
+          from_name: "Oversabi",
+          message: message.current.value,
+        });
+      } catch (e) {
+        alert("Something went wrong, please try again later.");
+      }
+      isLoading = false;
+    } else {
+      try {
+        const whatToPut = firebase
+          .storage()
+          .ref()
+          .child(userEmail.current.value);
+        const put = whatToPut.put(resumePdf.data);
 
-    try {
+        put.on(
+          "state_changed",
+          function progress(snapshot) {},
+          function error(err) {},
+          function completed() {
+            put.snapshot.ref.getDownloadURL().then(async (urlTemp) => {
+              await firebase.firestore().collection("workers").add({
+                name: userName.current.value,
+                email: userEmail.current.value,
+                resume: urlTemp,
+                isVerified: false,
+              });
+              alert(
+                "We have received your application,\n" +
+                  "one of our representatives will get back to you shortly."
+              );
+              isLoading = false;
+            });
+          }
+        );
+      } catch (e) {
+        console.log(e);
+        alert("Something went wrong. Please try again later");
+        isLoading = false;
+        return;
+      }
       await emailjs.send("service_iz4k1pf", "template_m5rmccc", {
         to_name: userName.current.value,
         to_email: userEmail.current.value,
         from_name: "Oversabi",
         message: message.current.value,
       });
-      alert(
-        "we have received your email. Kindly check your email box and we shall reply you shortly"
-      );
-    } catch (e) {
-      alert(e.message);
-      console.log(e);
     }
   };
 
@@ -73,6 +119,20 @@ export default function contact() {
                   >
                     Type your message here. How can we help?
                   </textarea>
+                  <label htmlFor="cvFile" className={styles.cvMessage}>
+                    Work with us? Submit your Resume
+                  </label>
+                  <input
+                    type="file"
+                    onChange={(e) => {
+                      setresumePdf({
+                        data: e.target.files[0],
+                        path: URL.createObjectURL(e.target.files[0]),
+                      });
+                    }}
+                    name="cvFile"
+                    accept="application/pdf"
+                  />
                   <p className={styles.contact__paragraph}>
                     By submitting this form, I confirm that I have read and
                     understood the Oversabi Privacy Statement.
