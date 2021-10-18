@@ -1,0 +1,23 @@
+.main__div {
+  z-index: 20;
+  background-color: white;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  width: 100%;
+  overflow-y: scroll;
+}
+.headerDiv {
+  width: 100%;
+  height: 50px;
+  background-color: aliceblue;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.headerDiv > * {
+  font-size: 40px;
+  cursor: pointer;
+}

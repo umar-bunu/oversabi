@@ -25,7 +25,7 @@ const Navigation = () => {
         </div>
         <div className={styles.nav__link_middle}>
           {adminContext.adminState && (
-            <Link href="/dashboard/work">
+            <Link href="/dashboard/work/work">
               <p className={styles.option}> Dashboard</p>
             </Link>
           )}

@@ -19,13 +19,15 @@ export default function contact() {
     isLoading = true;
     if (resumePdf == null) {
       try {
-        await emailjs.send("service_iz4k1pf", "template_m5rmccc", {
-          to_name: userName.current.value,
-          to_email: userEmail.current.value,
-          from_name: "Oversabi",
+        await emailjs.send("service_32qkiob", "template_engo2gm", {
+          to_name: "Oversabi",
+          to_email: "oversabitech@gmail.com",
+          from_name: userName.current.value,
+          from_email: userEmail.current.value,
           message: message.current.value,
         });
       } catch (e) {
+        console.log(e);
         alert("Something went wrong, please try again later.");
       }
       isLoading = false;
@@ -63,17 +65,21 @@ export default function contact() {
         isLoading = false;
         return;
       }
-      await emailjs.send("service_iz4k1pf", "template_m5rmccc", {
-        to_name: userName.current.value,
-        to_email: userEmail.current.value,
-        from_name: "Oversabi",
-        message: message.current.value,
+      console.log();
+      await emailjs.send("service_32qkiob", "template_engo2gm", {
+        to_name: "Oversabi",
+        to_email: "oversabitech@gmail.com",
+        from_name: userName.current.value,
+        from_email: userEmail.current.value,
+        message:
+          "The afforementioned personnel will want to work with oversabi. Please review their file from the site. They also has a message for you: " +
+          message.current.value,
       });
     }
   };
 
   useEffect(() => {
-    emailjs.init("user_W34Y0z8uuchKmjxKGOigq");
+    emailjs.init("user_7xTqsZKvhxAgZ3JLQv5Zo");
     return () => {};
   }, []);
   return (

@@ -136,4 +136,6 @@
 
 .header__pay {
   margin-top: 1.5rem;
+  max-height: 500px;
+  overflow-y: scroll;
 }
